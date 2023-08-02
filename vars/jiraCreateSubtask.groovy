@@ -5,7 +5,7 @@ def call(Map config=[:]) {
         parentKey: "${config.parentKey}",
         summary: "${config.summary}",
         description: "${config.description}",
-        issueTypeName: "${config.issueTypeName}"
+        issueTypeName: "${config.issueTypeName}",
         statusId: "${config.statusId}"
     ]
     def render = renderTemplate(rawBody,binding)
