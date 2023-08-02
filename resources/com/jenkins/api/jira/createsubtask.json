@@ -13,8 +13,5 @@
        \"issuetype\": {
           \"name\": \"$issueTypeName\"
        }
-       \"transition\": {
-        \"id\": \"$statusId\"
-       }
    }
 }
