@@ -1,7 +1,7 @@
 def call(Map config=[:]) {
     def rawBody = libraryResource 'com/jenkins/api/jira/updateStatus.json'
     def binding = [
-        key: "${config.key}"
+        key: "${config.key}",
         id: "${config.id}"
     ]
     def render = renderTemplate(rawBody,binding)
