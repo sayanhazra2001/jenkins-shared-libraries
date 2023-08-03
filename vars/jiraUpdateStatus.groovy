@@ -5,5 +5,5 @@ def call(Map config=[:]) {
         transitionId: "${config.transitionId}"
     ]
     def render = renderTemplate(rawBody,binding)
-  sh('curl -D- -u $JIRA_CREDENTIALS -X POST --data \"$render\" -H "Content-Type: application/json" $JIRA_URL/rest/api/2/issue/${issueKey}/transitions')
+  sh('curl -D- -u $JIRA_CREDENTIALS -X POST --data \"$render\" -H "Content-Type: application/json" $JIRA_URL/rest/api/2/issue/POC-22/transitions')
 }
