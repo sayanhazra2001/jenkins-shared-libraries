@@ -9,6 +9,6 @@
         ]
     },
     \"transition\": {
-        \"transitionName\": \"$transitionName\" 
+        \"transitionId\": \"$transitionId\" 
     }
 }
