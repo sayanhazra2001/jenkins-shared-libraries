@@ -1,0 +1,14 @@
+{
+    \"update\": {
+        \"comment\": [
+            {
+                \"add\": {
+                    \"body\": \"Status change to done\" 
+                }
+            }
+        ]
+    },
+    \"transition\": {
+        \"transitionName\": \"$transitionName\" 
+    }
+}
