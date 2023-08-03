@@ -3,9 +3,15 @@
        \"project\":
        {
           \"key\": \"$key\"
+       },
+       \"parent\":
+        {
+            \"key\": \"$parentKey\"
+        },
+       \"summary\": \"$summary\",
+       \"description\": \"$description\",
+       \"issuetype\": {
+          \"name\": \"$issueTypeName\"
        }
-   },
-   \"transition\": {
-      \"id\": \"$id\"
    }
 }
