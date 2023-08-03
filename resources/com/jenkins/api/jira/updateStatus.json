@@ -1,5 +1,11 @@
 {
-  \"transition\": {
-    \"id\": \"$transitionId\"
+    \"fields\": {
+       \"project\":
+       {
+          \"key\": \"$key\"
+       }
+   },
+   \"transition\": {
+    \"id\": \"$id\"
   }
 }
