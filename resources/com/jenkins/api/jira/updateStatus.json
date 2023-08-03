@@ -1,14 +1,5 @@
 {
-    \"update\": {
-        \"comment\": [
-            {
-                \"add\": {
-                    \"body\": \"Status change to done\" 
-                }
-            }
-        ]
-    },
-    \"transition\": {
-        \"transitionId\": \"$transitionId\" 
-    }
+  \"transition\": {
+    \"id\": \"$transitionId\"
+  }
 }
