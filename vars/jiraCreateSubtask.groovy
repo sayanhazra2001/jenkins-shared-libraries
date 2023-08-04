@@ -8,5 +8,12 @@ def call(Map config=[:]) {
         issueTypeName: "${config.issueTypeName}"
     ]
     def render = renderTemplate(rawBody,binding)
-    sh('curl -D- -u $JIRA_CREDENTIALS -X POST --data "'+render+'" -H "Content-Type: application/json" $JIRA_URL/rest/api/2/issue')
+    def curlCmd = sh('curl -D- -u $JIRA_CREDENTIALS -X POST --data "'+render+'" -H "Content-Type: application/json" $JIRA_URL/rest/api/2/issue')
+    def output = sh(script: curlCmd, returnStdout: true).trim()
+
+    // Parse the JSON response to extract the key of the created subtask
+    def jsonResponse = readJSON text: output
+    def createdKey = jsonResponse.key
+
+    echo "Created Subtask Key: ${createdKey}"
 }
