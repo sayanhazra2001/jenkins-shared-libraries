@@ -9,6 +9,7 @@ def call(Map config=[:]) {
     ]
     def render = renderTemplate(rawBody,binding)
     def curlCmd = sh('curl -D- -u $JIRA_CREDENTIALS -X POST --data "'+render+'" -H "Content-Type: application/json" $JIRA_URL/rest/api/2/issue')
+    echo curlCmd
     def output = sh(script: curlCmd, returnStdout: true).trim()
 
     // Parse the JSON response to extract the key of the created subtask
