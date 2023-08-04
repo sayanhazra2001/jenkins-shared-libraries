@@ -9,7 +9,7 @@ def call(Map config=[:]) {
     ]
     def render = renderTemplate(rawBody,binding)
     def response = sh('curl -D- -u $JIRA_CREDENTIALS -X POST --data "'+render+'" -H "Content-Type: application/json" $JIRA_URL/rest/api/2/issue')
-    def jsonResponse = readJSON text: response
+    def jsonResponse = new groovy.json.JsonSlurper().parseText(response)
     def subtaskKey = jsonResponse.key
     echo "Subtask Key: ${subtaskKey}"
 }
